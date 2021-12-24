@@ -15,15 +15,14 @@ object MergerTwoSortedLists {
 
       val buffer = mutable.ListBuffer.empty[Int]
 
-      while (currentX != null || currentY != null) {
-        if (currentX != null) {
-          buffer += currentX.x
-          currentX = currentX.next
-        }
-        if (currentY != null) {
-          buffer += currentY.x
-          currentY = currentY.next
-        }
+      while (currentX != null) {
+        buffer += currentX.x
+        currentX = currentX.next
+      }
+
+      while (currentY != null) {
+        buffer += currentY.x
+        currentY = currentY.next
       }
 
       buffer.sorted
